@@ -15,7 +15,10 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-string currentBranchName = File.ReadLines(Path.Combine(builder.Environment.ContentRootPath, "_CurrentBranchName.txt")).First();
+string filePath = Path.Combine(builder.Environment.ContentRootPath, "_CurrentBranchName.txt");
+string currentBranchName = File.ReadLines(filePath).First();
+File.Delete(filePath);
+
 builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
         .AddJsonFile($"appsettings.{currentBranchName}.json", optional: true)
