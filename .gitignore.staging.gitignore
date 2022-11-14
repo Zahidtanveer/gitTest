@@ -1,3 +1,4 @@
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 /AspNETCoreSample/appsettings.Production.json
+/AspNETCoreSample/appsettings.Development.json
