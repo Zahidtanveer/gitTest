@@ -1,6 +1,8 @@
+using AspNETCoreSample;
 using AspNETCoreSample.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting.Internal;
 using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,8 @@ string filePath = Path.Combine(builder.Environment.ContentRootPath, "_CurrentBra
 string currentBranchName = File.ReadLines(filePath).First();
 File.Delete(filePath);
 
+var Repo =RepoInfo.GetRepositoryInformationForPath(builder.Environment.ContentRootFileProvider.ToString());
+
 builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
         .AddJsonFile($"appsettings.{currentBranchName}.json", optional: true)
@@ -26,7 +30,7 @@ builder.Configuration.SetBasePath(builder.Environment.ContentRootPath)
 
 
 var app = builder.Build();
-
+var env = Environments.Production;
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
