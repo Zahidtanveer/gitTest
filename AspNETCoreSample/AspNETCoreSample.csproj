@@ -8,7 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LibGit2Sharp-SSH" Version="1.0.22" />
+    <EmbeddedResource Remove="C:\Users\zahid.tanveer\.nuget\packages\libgit2sharp-ssh.nativebinaries\1.0.14\build\\..\libgit2\libgit2_filename.txt" />
+    <EmbeddedResource Remove="C:\Users\zahid.tanveer\.nuget\packages\libgit2sharp-ssh.nativebinaries\1.0.14\build\\..\libgit2\libgit2_hash.txt" />
+    <EmbeddedResource Remove="C:\Users\zahid.tanveer\.nuget\packages\libgit2sharp-ssh.nativebinaries\1.0.14\build\\..\libgit2\libssh2_filename.txt" />
+    <EmbeddedResource Remove="C:\Users\zahid.tanveer\.nuget\packages\libgit2sharp-ssh.nativebinaries\1.0.14\build\\..\libgit2\libssh2_hash.txt" />
+    <EmbeddedResource Remove="C:\Users\zahid.tanveer\.nuget\packages\libgit2sharp-ssh.nativebinaries\1.0.14\build\\..\libgit2\zlib_filename.txt" />
+    <EmbeddedResource Remove="C:\Users\zahid.tanveer\.nuget\packages\libgit2sharp-ssh.nativebinaries\1.0.14\build\\..\libgit2\zlib_hash.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="C:\Users\zahid.tanveer\.nuget\packages\libgit2sharp-ssh.nativebinaries\1.0.14\build\\..\libgit2\LibGit2Sharp.dll.config" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.10" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.10" />

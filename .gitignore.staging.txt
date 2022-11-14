@@ -1,2 +1,0 @@
-# .NET Core
-appsettings.Production.json
